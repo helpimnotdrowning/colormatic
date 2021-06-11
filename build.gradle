@@ -1,11 +1,11 @@
 plugins {
-	id 'fabric-loom' version '0.4-SNAPSHOT'
+	id 'fabric-loom' version '0.6-SNAPSHOT'
 	id 'maven-publish'
 }
 
 repositories {
 	maven { url = "https://minecraft.curseforge.com/api/maven" }
-	maven { url = 'http://maven.sargunv.s3-website-us-west-2.amazonaws.com/' }
+	maven { url = 'https://maven.sargunv.s3-website-us-west-2.amazonaws.com/' }
 	maven { url = 'https://jitpack.io' }
 }
 
