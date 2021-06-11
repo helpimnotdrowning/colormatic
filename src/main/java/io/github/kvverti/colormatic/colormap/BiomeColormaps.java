@@ -219,7 +219,24 @@ public final class BiomeColormaps {
             }
         }
         ColormaticResolver resolver = getResolver(state);
-        return ((ColormaticBlockRenderView)world).colormatic_getColor(pos, resolver);
+        try {
+            return ((ColormaticBlockRenderView)world).colormatic_getColor(pos, resolver);
+        } catch(Exception e) {
+            // todo figure out held item colors
+            BiomeColormap colormap = colormapsByState.fallbackColormaps.get(state);
+
+            if(colormap == null) {
+                System.out.println("COLORMAP IS NULL");
+                colormap = colormapsByBlock.fallbackColormaps.get(state.getBlock());
+            }
+            if(colormap != null) {
+                System.out.println("COLORMAP IS __NOT__ NULL");
+                return colormap.getDefaultColor();
+            } else {
+                System.out.println("COLORMAP IS FUCKED");
+                return 0xffffff;
+            }
+        }
     }
 
     public static int getSkyColor(World world, BlockPos pos) {
