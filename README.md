@@ -1,6 +1,3 @@
 # Colormatic
 
-Colormatic is an independent implementation of the MCPatcher custom colors mod
-that runs on Fabric for Minecraft 1.14 and is resource pack compatible with
-Optifine's custom colors. Colormatic will read files from the `colormatic`
-namespace and the `minecraft:optifine` namespace.
+use https://github.com/kvverti/colormatic , no more crashes over there and this branch here doesnt work with Sodium 0.2 and im not too keen on monkeying around to shit fix it
